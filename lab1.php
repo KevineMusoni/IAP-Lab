@@ -1,7 +1,7 @@
 <?php
 include_once 'DBConnector.php';
 include_once 'user.php';
-$db = new DBConnector();
+$con = new DBConnector();
 
 if (isset($_POST['btn-save'])) {
     $first_name = $_POST['first_name'];
@@ -55,8 +55,6 @@ if (isset($_POST['btn-save'])) {
             ?>
              <tr>
                     <td><?echo $a_user[0]?></td>
-                    <td><?echo $a_user[1]?></td>
-                    <td><?echo $a_user[2]?></td>
              </tr>   
             <?
                 }

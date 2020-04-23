@@ -1,6 +1,5 @@
 <?php
     include "crud.php";
-    
     class User implements Crud{
         private $user_id;
         private $first_name;
