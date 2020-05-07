@@ -19,12 +19,13 @@ if (isset($_POST['btn-save'])) {
     
 }
 ?>
+<!-- html form -->
 <html>
 <head>
     <title>lab 1</title>
 </head>
 <body>
-    <form method="post" action="<?$_SERVER['PHP_SELF']?>">
+    <form method="post">
         <table text-align="center">
             <tr>
                 <td><input type="text" name="first_name" required placeholder="First Name"></td>
@@ -40,27 +41,5 @@ if (isset($_POST['btn-save'])) {
             </tr>
         </table>
     </form>
-    <div>
-        <p>Records:</p>
-        <table>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>City</td>
-            </tr>
-            <?
-                $user = new User("","","");
-                $dbusers = $user->readAll($db->conn);
-                foreach ($db_users as $db_user) {
-            ?>
-             <tr>
-                    <td><?echo $a_user[0]?></td>
-             </tr>   
-            <?
-                }
-                $db->closeDatabase();
-            ?>
-        </table>
-    </div>
 </body>
 </html>

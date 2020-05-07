@@ -25,18 +25,12 @@
             $fn = $this-> first_name;
             $ln = $this-> last_name;
             $city = $this-> city_name;
-            $res = $conn->query("INSERT INTO user(first_name,last_name,user_city) VALUES('$fn','$ln','$city')");
-            if ($res=== FALSE) {
-                die("Error: " . $conn->error);
-            }
+            $res = mysqli_query("INSERT INTO user(first_name,last_name,user_city) VALUES('$fn','$ln','$city')") or die("Error" .mysqli_error());
             return $res;
         }
 
-        public function readAll($conn){
-            $users = array();
-            $res = $conn-> query("SELECT * FROM user");
-            return $users;
-            
+        public function readAll(){
+            return null;
         }
         public function readUnique(){
             return null;

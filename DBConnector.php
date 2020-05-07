@@ -7,7 +7,7 @@
     class DBConnector{
         public $conn;
         function __construct(){
-            $this->conn = mysqli_connect(DB_SERVER,DB_USER,DB_PASS) or die ("Error:" .mysqli_error());
+            $this->conn = mysqli_connect(DB_SERVER,DB_USER,DB_PASS) or die ("Error:" .mysql_error());
             mysqli_select_db(DB_NAME, $this->conn);
             
         }
