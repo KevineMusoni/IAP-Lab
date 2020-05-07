@@ -9,7 +9,7 @@ if (isset($_POST['btn-save'])) {
     $city = $_POST['city_name'];
 
     $user = new User($first_name,$last_name,$city);
-    $res = $user->save();
+    $res = $user->save($con);
 
     if ($res) {
         echo "Save operation was a success";

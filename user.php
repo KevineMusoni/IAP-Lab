@@ -21,11 +21,11 @@
         }
 
         // crud interface
-        public function save($conn){
+        public function save($con){
             $fn = $this-> first_name;
             $ln = $this-> last_name;
             $city = $this-> city_name;
-            $res = mysqli_query("INSERT INTO user(first_name,last_name,user_city) VALUES('$fn','$ln','$city')") or die("Error" .mysqli_error());
+            $res = mysqli_query($con->conn,"INSERT INTO user(first_name,last_name,user_city) VALUES('$fn','$ln','$city')") or die("Error" .mysqli_error($con->conn));
             return $res;
         }
 

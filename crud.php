@@ -1,6 +1,6 @@
 <?php
 interface Crud{
-    public function save(mysqli $conn);
+    public function save($con);
     public function readAll();
     public function readUnique();
     public function search();
