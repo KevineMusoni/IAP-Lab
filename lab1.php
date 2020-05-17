@@ -33,7 +33,7 @@ if (isset($_POST['btn-save'])) {
 <html>
 <head>
 
-    <title>lab 1</title>
+    <title>IAP Lab</title>
 
     <script type="text/javascript" src="validate.js"></script>
     <link rel="stylesheet" type="text/css" href="validate.css">
