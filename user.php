@@ -29,8 +29,9 @@
             return $res;
         }
 
-        public function readAll(){
-            return null;
+        public function readAll($con){
+            $res = $con->query("SELECT * FROM user");
+            return $res;
         }
         public function readUnique(){
             return null;
@@ -46,6 +47,21 @@
         }
         public function removeAll(){
             return null;
+        }
+        public function validateForm(){
+            // Return true if values are not empty
+            $fn = $this->first_name;
+            $ln = $this->last_name;
+            $city = $this->city_name;
+
+            if($fn == "" || $ln == "" || $city == ""){
+                return false;
+            }
+            return true;
+        }
+        public function createFormErrorSessions(){
+            session_start();
+            $_SESSION['form_errors']= "All fields are required";
         }
 
     }
