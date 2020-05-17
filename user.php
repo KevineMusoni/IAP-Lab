@@ -1,6 +1,6 @@
 <?php
     include "crud.php";
-    include "authenticate.php";
+    include "authenticator.php";
     include_once 'DBConnector.php';
 
     class User implements Crud{
