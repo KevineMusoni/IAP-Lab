@@ -10,7 +10,7 @@
         $instance->setPassword($password);
         $instance->setUsername($username);
 
-        if ($instance->isPasswordCorrect($username,$password)) {
+        if (User::isPasswordCorrect($username,$password)) {
             $instance->login();
             $con->closeDatabase();
             $instance->createUserSession();

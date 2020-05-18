@@ -64,7 +64,7 @@
             $ln = $this-> last_name;
             $city = $this-> city_name;
             $uname = $this-> username;
-            $this-> hashPassword;
+            $this->hashPassword();
             $pass = $this->password;
 
             $res = mysqli_query($con->conn,"INSERT INTO user(first_name,last_name,user_city) VALUES('$fn','$ln','$city')") or die("Error" .mysqli_error($con->conn));
@@ -116,7 +116,8 @@
             $found = False;
             $res = mysqli_query($con->conn, "SELECT * FROM user") or die ("Error" .mysqli_error());
 
-            while($row = mysqli_fetch_array($res)){
+// use fetch_assoc instead to fetch to get result
+            while($row = ($res)->fetch_assoc){
                 if(password_verify($this->getPassword(), $row['password']) && $this ->getUsername() == $row['username']){
                     $found = true;
                 }
@@ -145,6 +146,11 @@
             session_destroy();
             header("Location:lab1.php");
 
+        }
+        public function isUserExist($con)
+        {
+            $res = mysqli_query("SELECT * FROM user WHERE username = '$this->username' LIMIT 1");
+            return $res->num_rows > 0;
         }
 
     }

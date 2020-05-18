@@ -7,11 +7,12 @@ if (isset($_POST['btn-save'])) {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $city = $_POST['city_name'];
-
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     // Creating a User Object
     // Note: The way we create our object using constructor that will be used to initialize our variables
 
-    $user = new User($first_name,$last_name,$city);
+    $user = new User($first_name,$last_name,$city,$username,$password);
 
     if(!$user->validateForm()){
         $user->createFormErrorSessions();
