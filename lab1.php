@@ -58,16 +58,25 @@ if (isset($_POST['btn-save'])) {
             </tr>
 
             <tr>
-                <td><input type="text" name="first_name" required placeholder="First Name"></td>
+                <td><input type="text" name="first_name" required placeholder="First Name" /></td>
             </tr>
             <tr>
-                <td><input type="text" name="last_name" placeholder="Last Name"></td>
+                <td><input type="text" name="last_name" placeholder="Last Name" /></td>
             </tr>
             <tr>
-                <td><input type="text" name="city_name" placeholder="City"></td>
+                <td><input type="text" name="city_name" placeholder="City" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="username" placeholder="Username" /></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password" placeholder="Password"/></td>
             </tr>
             <tr>
                 <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>
+            </tr>
+            <tr>
+                <td><a href="login.php">Login</a></td>
             </tr>
            
         </table>

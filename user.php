@@ -26,7 +26,7 @@
         // Introduce a static constructor so that we access it with the class rather than an object (PHP does not allow multiple constructors )
         
         public static function create(){
-            $instance = new self();
+            $instance = new self("", "", "", "", "");
             return $instance;
         }
 
@@ -42,7 +42,7 @@
 
         // password setter
         public function setPassword($password){
-            $this->Password = password;
+            $this->password = $password;
         }
         // password getter
         public function getPassword(){
@@ -111,12 +111,12 @@
             $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         }
 
-        public function isPasswordCorrect(){
+        public function isPasswordCorrect($username,$password){
             $con =new DBConnector;
             $found = False;
-            $res = mysqli_query("SELECT * FROM user") or die ("Error" .mysqli_error());
+            $res = mysqli_query($con->conn, "SELECT * FROM user") or die ("Error" .mysqli_error());
 
-            while($row=mysql_fetch_array($res)){
+            while($row = mysqli_fetch_array($res)){
                 if(password_verify($this->getPassword(), $row['password']) && $this ->getUsername() == $row['username']){
                     $found = true;
                 }
