@@ -1,6 +1,6 @@
 <?php
 interface Crud{
-    public function save($con);
+    public function save($con, $target_file);
     public function readAll($con);
     public function readUnique();
     public function search();

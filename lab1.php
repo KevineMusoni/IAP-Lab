@@ -74,6 +74,9 @@ if (isset($_POST['btn-save'])) {
                 <td><input type="password" name="password" placeholder="Password"/></td>
             </tr>
             <tr>
+                <td>Profile image:<input type="file" name="fileToUpload" id="fileToUpload"></td>
+            </tr>
+            <tr>
                 <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>
             </tr>
             <tr>
