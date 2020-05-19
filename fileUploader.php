@@ -11,3 +11,4 @@ class FileUploader
     private $file_size;
     private $final_file_name;
 
+// getters and setters
