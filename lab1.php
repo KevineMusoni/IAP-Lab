@@ -1,6 +1,7 @@
 <?php
 include_once 'DBConnector.php';
 include_once 'user.php';
+include_once 'fileUploader.php';
 $con = new DBConnector();
 
 if (isset($_POST['btn-save'])) {
@@ -10,9 +11,10 @@ if (isset($_POST['btn-save'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     // Creating a User Object
-    // Note: The way we create our object using constructor that will be used to initialize our variables
 
     $user = new User($first_name,$last_name,$city,$username,$password);
+    // Create object for file uploading
+    $uploader = new FileUploader();
 
     if(!$user->validateForm()){
         $user->createFormErrorSessions();
@@ -21,6 +23,8 @@ if (isset($_POST['btn-save'])) {
     }
 
     $res = $user->save($con);
+    // call uploadFile() function, which returns,
+    $file_upload_response = $uploader->uploadFile();
 
     if ($res) {
         echo "Save operation was a success";
