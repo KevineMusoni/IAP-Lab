@@ -25,6 +25,7 @@ if (isset($_POST['btn-save'])) {
     }
 
     $res = $user->save($con);
+    
     // call uploadFile() function, which returns,
     $file_upload_response = $uploader->uploadFile();
 

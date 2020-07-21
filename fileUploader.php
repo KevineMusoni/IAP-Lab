@@ -60,5 +60,4 @@ public function fileWasSelected(){
     
 }
 
-}
-// 
+} 
